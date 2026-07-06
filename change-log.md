@@ -13,3 +13,12 @@
 - Updated Web panel mapping to `25143:54321`.
 - Backed up 3x-ui runtime DB files into ignored `db-3xui-backup/` before starting old x-ui.
 - Verification: old x-ui `0.3.2` started and `http://127.0.0.1:25143/` returned `HTTP 200`.
+
+## 2026-07-06 Publish active node ports
+
+- Published the x-ui-created active node ports through Docker Compose: `46274/tcp+udp` for 电脑端 and `25776/tcp+udp` for 移动端.
+- Added `XUI_DESKTOP_NODE_PORT=46274` and `XUI_MOBILE_NODE_PORT=25776` to `.env.example`.
+- Verified Docker published `0.0.0.0:25776->25776/tcp+udp` and `0.0.0.0:46274->46274/tcp+udp`.
+- Verified x-ui Web remained reachable on `http://127.0.0.1:25143` with `HTTP 200`.
+- User confirmed mobile v2rayNG scan/import connectivity after the port mapping fix.
+- Pushed the fix to GitHub as commit `02d736f fix: publish configured x-ui node ports`.
