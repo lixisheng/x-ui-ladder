@@ -11,6 +11,10 @@ services:
       - "${VLESS_TCP_PORT:-10086}:${VLESS_TCP_PORT:-10086}/udp"
       - "${REALITY_TLS_PORT:-9443}:${REALITY_TLS_PORT:-9443}/tcp"
       - "${REALITY_TLS_PORT:-9443}:${REALITY_TLS_PORT:-9443}/udp"
+      - "${XUI_DESKTOP_NODE_PORT:-46274}:${XUI_DESKTOP_NODE_PORT:-46274}/tcp"
+      - "${XUI_DESKTOP_NODE_PORT:-46274}:${XUI_DESKTOP_NODE_PORT:-46274}/udp"
+      - "${XUI_MOBILE_NODE_PORT:-25776}:${XUI_MOBILE_NODE_PORT:-25776}/tcp"
+      - "${XUI_MOBILE_NODE_PORT:-25776}:${XUI_MOBILE_NODE_PORT:-25776}/udp"
     volumes:
       - ./db:/etc/x-ui
       - ./cert:/root/cert

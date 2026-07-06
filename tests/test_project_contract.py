@@ -15,12 +15,16 @@ class XuiLadderContractTests(unittest.TestCase):
         self.assertRegex(compose, r'"25143:54321"')
         self.assertIn("./db:/etc/x-ui", compose)
         self.assertIn("./cert:/root/cert", compose)
+        self.assertIn('"${XUI_DESKTOP_NODE_PORT:-46274}:${XUI_DESKTOP_NODE_PORT:-46274}/tcp"', compose)
+        self.assertIn('"${XUI_MOBILE_NODE_PORT:-25776}:${XUI_MOBILE_NODE_PORT:-25776}/tcp"', compose)
 
     def test_runtime_ports_are_documented_for_v2rayng_clients(self):
         env_example = self.read(".env.example")
         self.assertIn("XUI_PANEL_PORT=25143", env_example)
         self.assertIn("VLESS_TCP_PORT=10086", env_example)
         self.assertIn("REALITY_TLS_PORT=9443", env_example)
+        self.assertIn("XUI_DESKTOP_NODE_PORT=46274", env_example)
+        self.assertIn("XUI_MOBILE_NODE_PORT=25776", env_example)
         readme = self.read("README.md")
         self.assertIn("v2rayNG", readme)
         self.assertIn("http://127.0.0.1:25143", readme)
