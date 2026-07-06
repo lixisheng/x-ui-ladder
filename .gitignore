@@ -1,0 +1,11 @@
+.env
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# x-ui runtime data: database, certificates, generated config, uploaded certs.
+db/*
+!db/.gitkeep
+cert/*
+!cert/.gitkeep
