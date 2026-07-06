@@ -1,12 +1,12 @@
 services:
   x-ui:
-    image: ghcr.io/mhsanaei/3x-ui:latest
+    image: enwaiax/x-ui:latest
     container_name: x-ui-ladder
     restart: unless-stopped
     env_file:
       - .env
     ports:
-      - "25143:2053"
+      - "25143:54321"
       - "${VLESS_TCP_PORT:-10086}:${VLESS_TCP_PORT:-10086}/tcp"
       - "${VLESS_TCP_PORT:-10086}:${VLESS_TCP_PORT:-10086}/udp"
       - "${REALITY_TLS_PORT:-9443}:${REALITY_TLS_PORT:-9443}/tcp"

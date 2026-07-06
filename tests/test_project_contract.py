@@ -9,10 +9,10 @@ class XuiLadderContractTests(unittest.TestCase):
     def read(self, relative):
         return (ROOT / relative).read_text(encoding="utf-8")
 
-    def test_compose_maps_xui_panel_to_host_port_25143(self):
+    def test_compose_maps_old_xui_panel_to_host_port_25143(self):
         compose = self.read("docker-compose.yml")
-        self.assertIn("ghcr.io/mhsanaei/3x-ui:latest", compose)
-        self.assertRegex(compose, r'"25143:2053"')
+        self.assertIn("enwaiax/x-ui:latest", compose)
+        self.assertRegex(compose, r'"25143:54321"')
         self.assertIn("./db:/etc/x-ui", compose)
         self.assertIn("./cert:/root/cert", compose)
 

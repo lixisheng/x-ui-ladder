@@ -9,3 +9,6 @@ db/*
 !db/.gitkeep
 cert/*
 !cert/.gitkeep
+
+# backup from the temporary 3x-ui deployment
+db-3xui-backup/

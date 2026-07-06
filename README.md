@@ -1,6 +1,6 @@
 # x-ui Ladder
 
-Docker 化的 3x-ui 梯子管理项目，用于在服务器上部署 x-ui 面板，并给电脑/手机上的 v2rayNG 添加节点。
+Docker 化的 x-ui 梯子管理项目，用于在服务器上部署 x-ui 面板，并给电脑/手机上的 v2rayNG 添加节点。
 
 ## 端口
 
